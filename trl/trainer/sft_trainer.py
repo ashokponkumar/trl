@@ -118,6 +118,8 @@ class SFTTrainer(Trainer):
             Dict of Optional kwargs to pass when creating packed or non-packed datasets
         eval_packing: (`Optional[bool]`, *optional*):
             Whether to pack the eval dataset as well. Defaults to `packing` if `None` is passed.
+        data_config: (`Optional[Dict]`):
+            Dict representing the operations to be carried out while processing
     """
 
     _tag_names = ["trl", "sft"]
@@ -149,6 +151,7 @@ class SFTTrainer(Trainer):
         model_init_kwargs: Optional[Dict] = None,
         dataset_kwargs: Optional[Dict] = None,
         eval_packing: Optional[bool] = None,
+        data_config: Optional[Dict] = None,
     ):
         if model_init_kwargs is None:
             model_init_kwargs = {}
